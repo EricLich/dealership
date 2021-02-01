@@ -1,5 +1,8 @@
 const globalValues = {};
 
-globalValues.carTypes = ["car", "truck"];
+globalValues.carTypes = {
+    car: "car",
+    truck: "truck"
+};
 
 module.exports = globalValues;
