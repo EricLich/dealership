@@ -6,10 +6,6 @@ const employeeSchema = new mongoose.Schema({
         type: String,
         required: true
     },
-    lastName: {
-        type: String,
-        required:true
-    },
     dateOfBirth: {
         type: String,
         required: true
@@ -17,10 +13,6 @@ const employeeSchema = new mongoose.Schema({
     role:{
         type:String,
         required: true
-    },
-    position: {
-        type:String,
-        required:true    
     },
     salary: {
         type: Number,
@@ -31,4 +23,9 @@ const employeeSchema = new mongoose.Schema({
     }]
 }, {timestamps: true, versionKey: false});
 
-module.exports = model('Employee', employeeSchema);
+const Employee = model('Employee', employeeSchema);
+
+module.exports = {
+    Employee: Employee,
+    employeeSchema: employeeSchema
+}

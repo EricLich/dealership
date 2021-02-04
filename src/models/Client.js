@@ -6,7 +6,7 @@ const clientSchema = new mongoose.Schema({
         type: String,
         required: true
     },
-    lastName: {
+    type: {
         type: String,
         required:true
     },
@@ -19,4 +19,9 @@ const clientSchema = new mongoose.Schema({
     }]
 }, {timestamps: true, versionKey: false});
 
-module.exports = model('Client', clientSchema);
+const Client = model('Client', clientSchema);
+
+module.exports = {
+    Client: Client,
+    clientSchema: clientSchema
+}

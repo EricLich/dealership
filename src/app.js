@@ -4,9 +4,7 @@ const cors = require('cors');
 
 //routers
 const carsRouter = require('./routes/cars.routes');
-const clientsRouter = require('./routes/clients.routes');
 const dealershipsRouter = require('./routes/dealerships.routes');
-const employeesRouter = require('./routes/employees.routes');
 const garagesRouter = require('./routes/garages.routes');
 const motorbikesRouter = require('./routes/motorbikes.routes');
 
@@ -22,11 +20,9 @@ app.use(express.urlencoded({extended:false}));
 
 //ROUTES
 app.use('/dealership', dealershipsRouter);
-//app.use('/cars', carsRouter);
-//app.use('/motorbikes', motorbikesRouter);
-//app.use('/employees', employeesRouter);
-//app.use('/clients', clientsRouter);
-//app.use('/garages', garagesRouter);
+app.use('/cars', carsRouter);
+app.use('/motorbikes', motorbikesRouter);
+app.use('/garages', garagesRouter);
 
 
 
